@@ -39,6 +39,18 @@ module Hits
     def weight=(to, from, weight)
       @edge_weights[[to, from]] = weight if @edge_weights[[to, from]]
     end
+    
+    def max_weight
+      @edge_weights.values.max
+    end
+    
+    def min_weight
+      @edge_weights.values.min
+    end
+    
+    def weights
+      @edge_weights.values
+    end
 
     def to_s
       @graph.edges.to_a.to_s
